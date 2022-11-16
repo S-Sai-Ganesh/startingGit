@@ -33,8 +33,26 @@
 // Get elemnts by class name////
 var items = document.getElementsByClassName('list-group-item');
 
-items[2].style.backgroundColor = 'green';
+// items[2].style.backgroundColor = 'green';
+
+// for (let index = 0; index < items.length; index++) {
+//     items[index].style.fontWeight = 'bold';
+// }
+
+
+//Get Elements by Tag Name
+
+var liTag = document.getElementsByTagName('li');
+
+// liTag[2].style.backgroundColor = 'green';
+
+for (let index = 0; index < liTag.length; index++) {
+    liTag[index].style.color = 'red';
+}
+
+liTag[liTag.length-1].style.backgroundColor = '#F4F444';
 
 for (let index = 0; index < items.length; index++) {
-    items[index].style.fontWeight = 'bold';
+    items[index].style.backgroundColor = '#000000';
+    
 }
