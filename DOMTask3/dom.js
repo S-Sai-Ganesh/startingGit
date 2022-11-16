@@ -53,6 +53,6 @@ for (let index = 0; index < liTag.length; index++) {
 liTag[liTag.length-1].style.backgroundColor = '#F4F444';
 
 for (let index = 0; index < items.length; index++) {
-    items[index].style.backgroundColor = '#000000';
+    items[index].style.backgroundColor = '#000';
     
 }
