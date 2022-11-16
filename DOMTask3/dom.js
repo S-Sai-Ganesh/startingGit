@@ -30,7 +30,7 @@
 // addItems.style.fontWeight='bold';
 // console.log(addItems);
 
-// Get elemnts by class name//
+// Get elemnts by class name////
 var items = document.getElementsByClassName('list-group-item');
 
 items[2].style.backgroundColor = 'green';
