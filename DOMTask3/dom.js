@@ -31,7 +31,7 @@
 // console.log(addItems);
 
 // Get elemnts by class name////
-var items = document.getElementsByClassName('list-group-item');
+// var items = document.getElementsByClassName('list-group-item');
 
 // items[2].style.backgroundColor = 'green';
 
@@ -42,17 +42,41 @@ var items = document.getElementsByClassName('list-group-item');
 
 //Get Elements by Tag Name
 
-var liTag = document.getElementsByTagName('li');
+// var liTag = document.getElementsByTagName('li');
 
-// liTag[2].style.backgroundColor = 'green';
+// // liTag[2].style.backgroundColor = 'green';
 
-for (let index = 0; index < liTag.length; index++) {
-    liTag[index].style.color = 'red';
-}
+// for (let index = 0; index < liTag.length; index++) {
+//     liTag[index].style.color = 'red';
+// }
 
-liTag[liTag.length-1].style.backgroundColor = '#F4F444';
+// liTag[liTag.length-1].style.backgroundColor = '#F4F444';
 
-for (let index = 0; index < items.length; index++) {
-    items[index].style.backgroundColor = '#000000';
+// for (let index = 0; index < items.length; index++) {
+//     items[index].style.backgroundColor = '#000000';
+    
+// }
+
+
+
+////// Task6 \\\\\\
+// for id- use #, 
+// var item2Class = document.querySelector('.list-group-item:nth-child(2)');
+// item2Class.style.backgroundColor = 'green';
+
+// var item3Class = document.querySelector('.list-group-item:nth-child(3)');
+
+// item3Class.remove();
+
+var items = document.querySelectorAll('li');
+
+items[1].style.color = 'green';
+
+var oddItems = document.querySelectorAll('li:nth-child(odd)')
+
+for (let index = 0; index < oddItems.length; index++) {
+    
+    oddItems[index].style.backgroundColor = 'green';
     
 }
+
