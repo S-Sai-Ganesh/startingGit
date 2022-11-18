@@ -9,9 +9,15 @@ function onSubmit(e) {
 
     e.preventDefault();
 
-    console.log(nameInput.value);
+    myObj = {
+        name: nameInput.value,
+        email: emailInput.value
+    }
+    myObj_string = JSON.stringify(myObj);
 
-    console.log(emailInput.value);
-    localStorage.setItem('name', nameInput.value)
-    localStorage.setItem('email', emailInput.value);
+    localStorage.setItem('user', myObj_string);
+
+    myObj_obj = JSON.parse(localStorage.getItem('user'));
+    console.log(myObj_obj);
+
 }  
