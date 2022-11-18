@@ -13,11 +13,16 @@ function onSubmit(e) {
         name: nameInput.value,
         email: emailInput.value
     }
-    myObj_string = JSON.stringify(myObj);
 
-    localStorage.setItem('user', myObj_string);
+    localStorage.setItem(myObj.name,JSON.stringify(myObj));
 
-    myObj_obj = JSON.parse(localStorage.getItem('user'));
-    console.log(myObj_obj);
-
+    detailsOfPeople = JSON.parse(localStorage.getItem(myObj.name));
+    addNewLineElement(detailsOfPeople);
 }  
+
+
+function addNewLineElement(user){
+    const parentNode = document.getElementById("users");
+    const childHTML = `<li> ${user.name} - ${user.email}</li>`
+    parentNode.innerHTML = parentNode.innerHTML + childHTML;
+}
