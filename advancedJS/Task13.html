@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task13-callBackFun</title>
+</head>
+<body>
+    
+<input type="button" id="click" value="Click Me">
+<script>
+document.getElementById('click').addEventListener('click',()=>{console.log('clicked me');});
+document.getElementById('click').addEventListener('documentLoaded', console.log("DOM has loaded"));
+</script>
+</body>
+</html>
