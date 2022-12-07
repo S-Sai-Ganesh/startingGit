@@ -13,8 +13,8 @@ function getPosts(){
     }, 1000);
 }
 
-function createPost(post){
-    return new Promise((resolve, reject) => {
+async function createPost(post){
+    const awaitCreatePost = new Promise((resolve, reject) => {
         setTimeout(() => {
             posts.push(post);
             const error = false;
@@ -28,11 +28,13 @@ function createPost(post){
         
     });
 
+    let created = await awaitCreatePost;
+    return created;
 }
 
 
-function deletePost() {
-    return new Promise((resolve, reject) => {
+async function deletePost() {
+    const awaitDeletePost = new Promise((resolve, reject) => {
         setTimeout(() => {
             const len = posts.length;
             if(len!=0) {
@@ -44,6 +46,9 @@ function deletePost() {
             }
         },1000);
     });
+
+    let pop = await awaitDeletePost;
+    return pop;
 }
 
 function updateLastUserActivityTime() {
@@ -63,15 +68,15 @@ return Promise.all([createPost(post),updateLastUserActivityTime()]).then(([,upTi
 }
 
 
-createPostTime({title: 'Post three',body: 'This is post three', createdAt: new Date()}).then( () => {getPosts();
-            deletePost().then(() => {
-                getPosts();
-                deletePost().then(() =>{
-                    getPosts();
-                    deletePost().then(() => {
-                        getPosts();
-                        post4();
-})})})}).catch(err => console.log(err));
+createPostTime({title: 'Post three',body: 'This is post three', createdAt: new Date()}).then( async () => {getPosts();
+            await deletePost();
+            getPosts();
+            await deletePost();
+            getPosts();
+            await deletePost();
+            getPosts();
+            post4();
+            }).catch(err => console.log(err));
 
 
 
