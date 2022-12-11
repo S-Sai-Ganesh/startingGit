@@ -52,7 +52,7 @@ function addNewLineElement(detailsOfPeople){
     editBtn.addEventListener('click', ()=> {
         document.getElementById('name').value = detailsOfPeople.name;
         document.getElementById('email').value = detailsOfPeople.email;
-        localStorage.removeItem(detailsOfPeople.name);
+        axios.delete(`https://crudcrud.com/api/7adb60561b354135b08400fd5e4f1d9e/appointmentBooking/${detailsOfPeople._id}`);
         li.remove();
     });
     editBtn.style.border = '2px solid green';
