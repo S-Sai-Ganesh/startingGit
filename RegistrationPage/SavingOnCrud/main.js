@@ -63,7 +63,7 @@ function addNewLineElement(detailsOfPeople){
     delBtn.type='button';
     delBtn.value='delete';
     delBtn.addEventListener('click', ()=> {
-        localStorage.removeItem(detailsOfPeople.name);
+        axios.delete(`https://crudcrud.com/api/7adb60561b354135b08400fd5e4f1d9e/appointmentBooking/${detailsOfPeople._id}`)
         li.remove();
     });
     delBtn.style.border = '2px solid red';
